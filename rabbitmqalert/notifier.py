@@ -1,5 +1,6 @@
 import smtplib
 import urllib2
+import urllib
 
 
 class Notifier():
@@ -44,6 +45,7 @@ class Notifier():
             self.log.info("Sending Telegram notification: \"{0}\"".format(body))
 
             text_telegram = "%s: %s" % (self.arguments["server_queue"], text)
+            text_telegram = urllib.quote(text_telegram, safe='')
             telegram_url = "https://api.telegram.org/bot%s/sendMessage?chat_id=%s&text=%s" % (self.arguments["telegram_bot_id"], self.arguments["telegram_channel"], text_telegram)
 
             request = urllib2.Request(telegram_url)
