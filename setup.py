@@ -9,7 +9,7 @@ VERSION = "1.8.1"
 DIST_CONFIG_PATH = "rabbitmqalert/config"
 
 DATA_FILES = [
-    ("/etc/rabbitmq-alert/", [DIST_CONFIG_PATH + "/config.ini.example"]),
+    ("/etc/rabbitmq-alert/", [DIST_CONFIG_PATH + "/config.ini"]),
     ("/var/log/rabbitmq-alert/", [])
 ]
 

@@ -28,6 +28,7 @@ def setup_arguments():
     server.add_argument("--queues", dest="server_queues", help="List of comma-separated queue names to inspect", type=str)
     server.add_argument("--queues-discovery", dest="server_queues_discovery", help="Discover queues", default=None, action="store_true")
     server.add_argument("--check-rate", dest="server_check_rate", help="Conditions check frequency, in seconds.", type=int)
+    server.add_argument("--time-to-wait", dest="server_time_to_wait", help="Conditions check waiting time, in seconds.", type=int)
 
     conditions = parser.add_argument_group("Conditions")
     conditions.add_argument("--ready-queue-size", dest="conditions_ready_queue_size", help="Size of Ready messages on the queue to alert as warning", type=int)
